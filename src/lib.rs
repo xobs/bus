@@ -623,7 +623,7 @@ impl<T: Clone> BusReader<T> {
             }
 
             if !sw.spin() {
-                thread::park_timeout(Duration::new(0, 100000));
+                thread::park_timeout(Duration::new(0, 100000000));
             }
         }
 
