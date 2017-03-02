@@ -396,7 +396,7 @@ impl<T: Clone> Bus<T> {
                     // not likely to get a slot soon -- wait to be unparked instead.
                     // note that we *need* to wait, because there are some cases in which we
                     // *won't* be unparked even though a slot has opened up.
-                    thread::park_timeout(Duration::new(0, 100000));
+                    thread::park_timeout(Duration::new(0, 100000000));
                 }
                 continue;
             } else {
